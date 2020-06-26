@@ -1,7 +1,5 @@
 function bar() {
-    const string = 'Webpack!';
-    console.log('bar');
-    return string;
-}
-
-export default bar;
+    cosnole.log("I'm a bar!");
+  }
+  
+  export default bar;

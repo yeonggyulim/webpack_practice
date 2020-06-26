@@ -1,10 +1,15 @@
-function app() {
-	// h1 tag를 만들고 문자열을 저장한다.
-	const contents = document.createElement('h1');
-	contents.innerHTML = 'Hello Webpack';
+import bar from './bar';
 
-	return contents;
+function app() {
+  const div = document.createElement('div');
+  const btn = document.createElement('button');
+
+  div.innerHTML = 'Hello Development';
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = bar;
+  div.appendChild(btn);
+
+  return div;
 }
 
-// app 함수가 반환한 h1 tag를 body tag에 붙인다.
 document.body.appendChild(app());

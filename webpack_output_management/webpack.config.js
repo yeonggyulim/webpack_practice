@@ -5,9 +5,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
 	mode: 'development',
 
+	devtool: 'inline-source-map',
+
 	entry: {
 		app: path.resolve(__dirname, 'src', 'app.ts'),
-		bar2: path.resolve(__dirname, 'src', 'bar2.ts'),
+		bar: path.resolve(__dirname, 'src', 'bar.ts'),
 	},
 
 	output: {
@@ -22,4 +24,16 @@ module.exports = {
 			filename: './index.html',
 		}),
 	],
+
+	devServer: {
+		host: '127.0.0.1',
+		port: 8000,
+		inline: true,
+		overlay: true,
+		historyApiFallback: true,
+	},
+
+	resolve: {
+		extensions: ['.ts', '.js'],
+	},
 };
